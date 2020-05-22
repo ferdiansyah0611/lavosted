@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example Lavosted</title>
+</head>
+<body>
+<form class="form" name="form">
+    <input name="password" autocomplete="off">
+    <span id="id1"></span>
+    <input name="password2" autocomplete="off"> 
+    <span id="id2"></span>
+    <div class="example"></div>
+    <a href="javascript:void(0)" class="lv-url" data-url="this url" data-title="data title">spa</a>
+</form>
+<script type="text/javascript" src="./js/lavosted.js"></script>
+<script type="text/javascript">
+$.initial({
+    csrf:{
+      name:"<?php echo $this->security->get_csrf_token_name();?>",
+      token:"<?php echo $this->security->get_csrf_hash();?>"
+    },
+    responsive:true,
+    /*perfomance:{
+      cache:true,
+      urlLavosted:'/'*/
+      /*urlLavosted:'<php echo base_url(); ?>assets/lavosted'*/
+    /*},*/
+    multiLanguange:true
+  });
+  /*GET API*/
+  /*$.api('get','http://data_school.us/api/class').then(function(result){
+    console.log(result);
+  });
+  $.api('post', '/post', document.getElementsByClassName('form')).then(function(result){
+    console.log(result);
+  });*/
+  /*$.dom('input').then(function(result){
+    console.log(result);
+    result.forEach((val, key) =>{
+      console.log(val);
+    });
+  });*/
+  $.css('.example','padding:10px|margin:10px');
+  /*HTML MULPILE APPEND*/
+  $.html({
+    0:['.example','<div>datsa</div>'],
+    1:['.example','<div>data</div>']
+  });
+  /*HTML FOR ALL CLASS APPEND*/
+  $.htmlAll({
+    0:['.example','<div>datsa</div>'],
+    1:['.example','<div>data</div>']
+  });
+  /*HTML WITH STRING*/
+  /*$.html('.example','<p>ok</p>');*/
+  /*TO APPEND HTML CSS*/
+  $.appendTo('class', 'ds',{append:'html',fill:'okes'});
+  /*TO APPEND CSS*/
+  $.appendTo('style', '',{fill:'#id1{color:red;}'});
+  /*VALIDATION*/
+  $.validation({
+    1:['form','password','4','11','text','id1'],
+    2:['form','password2','4','11','number','id2']
+  });
+  $.append('.modal|<div>Hello</div>');
+  $.append({
+    1:'.modal|<div>Hello</div>',
+    2:'.container|<div>Hello</div>'
+  });
+  $.spa('default');
+</script>
+</body>
+</html>

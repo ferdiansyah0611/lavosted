@@ -1,0 +1,84 @@
+div.col{
+    padding: 10px;
+}
+
+/*mobile*/
+@media screen and (min-width: 0px)
+{
+  div.container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap
+  }
+  div.container::after{
+    contain: "";
+    clear: both;
+    display: table
+  }
+}
+/*mobile l {m/s}*/
+@media screen and (max-width: 425px)
+{
+  .col.s12, .col.s11, .col.s10, .col.s9, .col.s8, .col.s7, .col.s6, .col.s5, .col.s4, .col.s3, .col.s2, .col.s1,
+  .col.m12, .col.m11, .col.m10, .col.m9, .col.m8, .col.m7, .col.m6, .col.m5, .col.m4, .col.m3, .col.m2, .col.m1,
+  .col.l12, .col.l11, .col.l10, .col.l9, .col.l8, .col.l7, .col.l6, .col.l5, .col.l4, .col.l3, .col.l2, .col.l1,
+  .col.xl12, .col.xl11, .col.xl10, .col.xl9, .col.xl8, .col.xl7, .col.xl6, .col.xl5, .col.xl4, .col.xl3, .col.xl2, .col.xl1{
+    flex-basis: 5.37% !important;
+  }
+}
+/*tablet {l}*/
+@media screen and (min-width: 425px) and (max-width: 768px)
+{
+
+}
+/*tablet {xl}*/
+@media screen and (min-width: 768px) and (max-width: 1024px)
+{
+  .col.s12.xl1, .col.s11.xl1, .col.s10.xl1, .col.s9.xl1, .col.s8.xl1, .col.s7.xl1, .col.s6.xl1, .col.s5.xl1, .col.s14.xl1,
+  .col.s3.xl1, .col.s2.xl1, .col.s1.xl1{
+    flex-basis: 100% !important;
+  }
+  .col.s12.x2{
+    flex-basis: 91.66% !important;
+  }
+}
+/*laptop large*/
+@media screen and (min-width: 1024px) and (max-width: 1440px)
+{
+  .col.s12{
+    flex-basis: 100% !important;
+  }
+  .col.s11{
+    flex-basis: 91.66% !important;
+  }
+  .col.s10{
+    flex-basis: 83.33% !important;
+  }
+  .col.s9{
+    flex-basis: 75% !important;
+  }
+  .col.s8{
+    flex-basis: 66.66% !important;
+  }
+  .col.s7{
+    flex-basis: 58.33% !important;
+  }
+  .col.s6{
+    flex-basis: 50% !important;
+  }
+  .col.s5{
+    flex-basis: 41.66% !important;
+  }
+  .col.s4{
+    flex-basis: 33.33% !important;
+  }
+  .col.s3{
+    flex-basis: 25% !important;
+  }
+  .col.s2{
+    flex-basis: 16.66% !important;
+  }
+  .col.s1{
+    flex-basis: 5.37% !important;
+  }
+}

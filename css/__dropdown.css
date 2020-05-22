@@ -1,0 +1,10 @@
+.lv-dropdown {
+	position:relative;
+	display: inline-block;
+}
+.lv-items {
+	display: none;
+	position: absolute;
+	min-width: 200px;
+	box-shadow: 
+}
