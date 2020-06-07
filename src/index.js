@@ -3,14 +3,12 @@
  * @version 1.0
  * @license MIT
  */
-'use strict';
 var obj = {};
 class design{
     constructor()
     {
 
     }
-
 }
 class L extends design{
 	constructor()
@@ -49,12 +47,7 @@ class L extends design{
      */
 	required()
 	{
-        'use strict';
-        function data()
-        {
-            'use strict';
-            return 'ok'
-        }
+
     }
     /**
      * @function init
@@ -87,6 +80,47 @@ class L extends design{
             } else {
                 return false;
             }
+        }
+    }
+    src(type, option){
+        const link = function(src)
+        {
+            window.addEventListener('DOMContentLoaded', function() {
+                var data = document.createElement('link');
+                data.rel = 'stylesheet';
+                data.type = 'text/css';
+                data.href = src;
+                document.head.appendChild(data);
+            });
+        }
+        const script = function(src) {
+            window.addEventListener('DOMContentLoaded', function() {
+                var data = document.createElement('script');
+                data.type = 'text/javascript';
+                data.src = src;
+                document.body.appendChild(data);
+            });
+        }
+        const meta = function(name, content) {
+            window.addEventListener('DOMContentLoaded', function() {
+                var data = document.createElement('meta');
+                data.name = name;
+                data.content = content;
+                document.head.appendChild(data);
+            });
+        }
+        try{
+            if(type == 'link') {
+                link(option.src);
+            }
+            if(type == 'script') {
+                script(option.src);
+            }
+            if(type == 'meta') {
+                script(option.name, option.content);
+            }
+        }catch(e){
+            throw Error(e);
         }
     }
     headers(data, options)
@@ -138,6 +172,7 @@ class L extends design{
      */
 	async api(data, options)
 	{
+        var headers = JSON.parse(window.localStorage.getItem('headers'));
         const debug_open = function(data)
         {
             console.group('api');
@@ -158,7 +193,6 @@ class L extends design{
          * @param {*} url
          * @returns {json()}
          */
-        var headers = JSON.parse(window.localStorage.getItem('headers'));
         const get = async function(url, options)
         {
             if(typeof headers == 'object'){
