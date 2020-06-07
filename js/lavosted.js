@@ -131,6 +131,15 @@ class $LV {
             {
                 return window.navigator.languange;
             }
+            if(data.run)
+            {
+                if(data.run == 'development')
+                {
+                    console.info('You are running Lavosted in development mode. Make sure to turn on production mode when deploying for production');
+
+                } else {
+                }
+            }
             window.addEventListener('DOMContentLoaded', function(){
                 if(window.location.hash)
                 {

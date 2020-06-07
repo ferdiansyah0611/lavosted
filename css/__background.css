@@ -92,3 +92,368 @@
 .bg-alternate{
     background-color: var(--alternate);
 }
+/*mobile l {s}*/
+@media screen and (max-width: 425px)
+{
+    .bg-s-blue{
+        background-color: var(--blue);
+    }
+    .bg-s-indigo{
+        background-color: var(--indigo);
+    }
+    .bg-s-purple{
+        background-color: var(--purple);
+    }
+    .bg-s-pink{
+        background-color: var(--pink);
+    }
+    .bg-s-red{
+        background-color: var(--red);
+    }
+    .bg-s-orange{
+        background-color: var(--orange);
+    }
+    .bg-s-yellow{
+        background-color: var(--yellow);
+    }
+    .bg-s-green{
+        background-color: var(--green);
+    }
+    .bg-s-teal{
+        background-color: var(--teal);
+    }
+    .bg-s-cyan{
+        background-color: var(--cyan);
+    }
+    .bg-s-white{
+        background-color: var(--white);
+    }
+    .bg-s-gray{
+        background-color: var(--gray);
+    }
+    .bg-s-gray-dark{
+        background-color: var(--gray-dark);
+    }
+    .bg-s-primary{
+        background-color: var(--primary);
+    }
+    .bg-s-secondary{
+        background-color: var(--secondary);
+    }
+    .bg-s-success{
+        background-color: var(--success);
+    }
+    .bg-s-info{
+        background-color: var(--info);
+    }
+    .bg-s-warning{
+        background-color: var(--warning);
+    }
+    .bg-s-danger{
+        background-color: var(--danger);
+    }
+    .bg-s-light{
+        background-color: var(--light);
+    }
+    .bg-s-dark{
+        background-color: var(--dark);
+    }
+    .bg-s-focus{
+        background-color: var(--focus);
+    }
+    .bg-s-alternate{
+        background-color: var(--alternate);
+    }
+}
+/*tablet {m}*/
+@media screen and (min-width: 425px) and (max-width: 768px)
+{
+    .bg-m-blue{
+        background-color: var(--blue);
+    }
+    .bg-m-indigo{
+        background-color: var(--indigo);
+    }
+    .bg-m-purple{
+        background-color: var(--purple);
+    }
+    .bg-m-pink{
+        background-color: var(--pink);
+    }
+    .bg-m-red{
+        background-color: var(--red);
+    }
+    .bg-m-orange{
+        background-color: var(--orange);
+    }
+    .bg-m-yellow{
+        background-color: var(--yellow);
+    }
+    .bg-m-green{
+        background-color: var(--green);
+    }
+    .bg-m-teal{
+        background-color: var(--teal);
+    }
+    .bg-m-cyan{
+        background-color: var(--cyan);
+    }
+    .bg-m-white{
+        background-color: var(--white);
+    }
+    .bg-m-gray{
+        background-color: var(--gray);
+    }
+    .bg-m-gray-dark{
+        background-color: var(--gray-dark);
+    }
+    .bg-m-primary{
+        background-color: var(--primary);
+    }
+    .bg-m-secondary{
+        background-color: var(--secondary);
+    }
+    .bg-m-success{
+        background-color: var(--success);
+    }
+    .bg-m-info{
+        background-color: var(--info);
+    }
+    .bg-m-warning{
+        background-color: var(--warning);
+    }
+    .bg-m-danger{
+        background-color: var(--danger);
+    }
+    .bg-m-light{
+        background-color: var(--light);
+    }
+    .bg-m-dark{
+        background-color: var(--dark);
+    }
+    .bg-m-focus{
+        background-color: var(--focus);
+    }
+    .bg-m-alternate{
+        background-color: var(--alternate);
+    }
+}
+/*tablet {l}*/
+@media screen and (min-width: 768px) and (max-width: 1024px)
+{
+    .bg-l-blue{
+        background-color: var(--blue);
+    }
+    .bg-l-indigo{
+        background-color: var(--indigo);
+    }
+    .bg-l-purple{
+        background-color: var(--purple);
+    }
+    .bg-l-pink{
+        background-color: var(--pink);
+    }
+    .bg-l-red{
+        background-color: var(--red);
+    }
+    .bg-l-orange{
+        background-color: var(--orange);
+    }
+    .bg-l-yellow{
+        background-color: var(--yellow);
+    }
+    .bg-l-green{
+        background-color: var(--green);
+    }
+    .bg-l-teal{
+        background-color: var(--teal);
+    }
+    .bg-l-cyan{
+        background-color: var(--cyan);
+    }
+    .bg-l-white{
+        background-color: var(--white);
+    }
+    .bg-l-gray{
+        background-color: var(--gray);
+    }
+    .bg-l-gray-dark{
+        background-color: var(--gray-dark);
+    }
+    .bg-l-primary{
+        background-color: var(--primary);
+    }
+    .bg-l-secondary{
+        background-color: var(--secondary);
+    }
+    .bg-l-success{
+        background-color: var(--success);
+    }
+    .bg-l-info{
+        background-color: var(--info);
+    }
+    .bg-l-warning{
+        background-color: var(--warning);
+    }
+    .bg-l-danger{
+        background-color: var(--danger);
+    }
+    .bg-l-light{
+        background-color: var(--light);
+    }
+    .bg-l-dark{
+        background-color: var(--dark);
+    }
+    .bg-l-focus{
+        background-color: var(--focus);
+    }
+    .bg-l-alternate{
+        background-color: var(--alternate);
+    }
+}
+/*laptop large {xl}*/
+@media screen and (min-width: 1024px) and (max-width: 1440px)
+{
+    .bg-xl-blue{
+        background-color: var(--blue);
+    }
+    .bg-xl-indigo{
+        background-color: var(--indigo);
+    }
+    .bg-xl-purple{
+        background-color: var(--purple);
+    }
+    .bg-xl-pink{
+        background-color: var(--pink);
+    }
+    .bg-xl-red{
+        background-color: var(--red);
+    }
+    .bg-xl-orange{
+        background-color: var(--orange);
+    }
+    .bg-xl-yellow{
+        background-color: var(--yellow);
+    }
+    .bg-xl-green{
+        background-color: var(--green);
+    }
+    .bg-xl-teal{
+        background-color: var(--teal);
+    }
+    .bg-xl-cyan{
+        background-color: var(--cyan);
+    }
+    .bg-xl-white{
+        background-color: var(--white);
+    }
+    .bg-xl-gray{
+        background-color: var(--gray);
+    }
+    .bg-xl-gray-dark{
+        background-color: var(--gray-dark);
+    }
+    .bg-xl-primary{
+        background-color: var(--primary);
+    }
+    .bg-xl-secondary{
+        background-color: var(--secondary);
+    }
+    .bg-xl-success{
+        background-color: var(--success);
+    }
+    .bg-xl-info{
+        background-color: var(--info);
+    }
+    .bg-xl-warning{
+        background-color: var(--warning);
+    }
+    .bg-xl-danger{
+        background-color: var(--danger);
+    }
+    .bg-xl-light{
+        background-color: var(--light);
+    }
+    .bg-xl-dark{
+        background-color: var(--dark);
+    }
+    .bg-xl-focus{
+        background-color: var(--focus);
+    }
+    .bg-xl-alternate{
+        background-color: var(--alternate);
+    }
+}
+/*super large {lg}*/
+@media screen and (min-width: 1440px)
+{
+    .bg-lg-blue{
+        background-color: var(--blue);
+    }
+    .bg-lg-indigo{
+        background-color: var(--indigo);
+    }
+    .bg-lg-purple{
+        background-color: var(--purple);
+    }
+    .bg-lg-pink{
+        background-color: var(--pink);
+    }
+    .bg-lg-red{
+        background-color: var(--red);
+    }
+    .bg-lg-orange{
+        background-color: var(--orange);
+    }
+    .bg-lg-yellow{
+        background-color: var(--yellow);
+    }
+    .bg-lg-green{
+        background-color: var(--green);
+    }
+    .bg-lg-teal{
+        background-color: var(--teal);
+    }
+    .bg-lg-cyan{
+        background-color: var(--cyan);
+    }
+    .bg-lg-white{
+        background-color: var(--white);
+    }
+    .bg-lg-gray{
+        background-color: var(--gray);
+    }
+    .bg-lg-gray-dark{
+        background-color: var(--gray-dark);
+    }
+    .bg-lg-primary{
+        background-color: var(--primary);
+    }
+    .bg-lg-secondary{
+        background-color: var(--secondary);
+    }
+    .bg-lg-success{
+        background-color: var(--success);
+    }
+    .bg-lg-info{
+        background-color: var(--info);
+    }
+    .bg-lg-warning{
+        background-color: var(--warning);
+    }
+    .bg-lg-danger{
+        background-color: var(--danger);
+    }
+    .bg-lg-light{
+        background-color: var(--light);
+    }
+    .bg-lg-dark{
+        background-color: var(--dark);
+    }
+    .bg-lg-focus{
+        background-color: var(--focus);
+    }
+    .bg-lg-alternate{
+        background-color: var(--alternate);
+    }
+}
