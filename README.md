@@ -8,81 +8,51 @@ Before using lavosted, add jquery.js to your website. It is confirmed that jquer
 ### Installing
 
 What things you need to install the software and how to install them
+## Usage
 
-```
+```html
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Content-Language" content="{{ str_replace('_', '-', app()->getLocale()) }}">
-<meta name="csrf-token" content="{{ csrf_token() }}">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>title</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="{{url('data/admin.js')}}" type="text/javascript"></script>
-<script type="text/javascript">
-$(function(){
-  $.getScript('/lavosted/source/js/lavosted.js', function(data, textStatus)){
-    var lv = new Lavosted();
-  })
-})
+	<title>Lavosted Framework</title>
+</head>
+<body>
+<div class="container-auto">
+	<input type="hidden" name="data">
+	<div class="bg-cyan t-center col s12 cy">Hello</div>
+	<div class="bg-cyan t-center col s11">Hello</div>
+	<div class="bg-cyan t-center col s10">Hello</div>
+	<div class="bg-cyan t-center col s9">Hello</div>
+	<div class="bg-cyan t-center col s8">Hello</div>
+	<div class="bg-cyan t-center col s7">Hello</div>
+	<div class="bg-cyan t-center col s6">Hello</div>
+	<div class="bg-cyan t-center col s5">Hello</div>
+</div>
+<script src="./dist/main.js"></script>
+<script>
+L.init({
+	responsive: true,
+	run: 'development',
+	route: true
+});
+L.set = 'asd';
+L.set = 'asd';
+L.set = 'asd';
+L.src('link', {src : './css/__responsive.css'});
+L.src('link', {src : './css/__background.css'});
+L.src('link', {src : './css/__helper.css'});
+L.src('link', {src : './css/__required.css'});
+L.html('.col', '<p>Test HTML append</p>');
+L.style('.cy', '.cy {background-color: red;}');
 </script>
+</body>
+</html>
 ```
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+Please make sure to update tests as appropriate.
 
 ## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
-
+[MIT](https://choosealicense.com/licenses/mit/)
