@@ -1,9 +1,9 @@
+'use strict';
 /**
  * @host ferdiansyah0611.github.com
  * @version 1.0
  * @license MIT
  */
-var obj = {};
 class design{
     constructor()
     {
@@ -17,11 +17,8 @@ class L extends design{
         this.items = function(data){
             return data;
         }
-        this.data = {
-            headers : function(){
-                return JSON.parse(window.localStorage.getItem('headers'));
-            }
-        }
+        this.data = [];
+        this.obj = {};
         this.dev = {
             headers : function(){
                 return true;
@@ -42,12 +39,21 @@ class L extends design{
             }
         }
     }
+    set set(data){
+        return this.data.push(data);
+    }
     /**
      * 
      */
 	required()
 	{
+        (function(){
+            Function.prototype.d = function(){
+                return 'sa';
+            }
 
+        })
+        return 'ok'
     }
     /**
      * @function init
@@ -117,7 +123,7 @@ class L extends design{
                 script(option.src);
             }
             if(type == 'meta') {
-                script(option.name, option.content);
+                meta(option.name, option.content);
             }
         }catch(e){
             throw Error(e);
