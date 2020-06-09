@@ -4,26 +4,20 @@
  * @version 1.0
  * @license MIT
  */
-class design{
-    constructor()
-    {
 
-    }
-}
-class L extends design{
+ /*
+$defaults = [
+1: headers
+]
+ */
+class L{
 	constructor()
 	{
-        super();
-        this.items = function(data){
-            return data;
-        }
+        /*store ex: headers*/
+        this.$apps = [];
+        /*store data*/
         this.data = [];
-        this.obj = {};
-        this.dev = {
-            headers : function(){
-                return true;
-            }
-        }
+        /*doms*/
         this.doms = {
             class : function(data){
                 return document.getElementsByClassName(data);
@@ -38,61 +32,78 @@ class L extends design{
                 return document.querySelectorAll(data);
             }
         }
+        this.url = {
+            on : function(){
+                return window.location.href;
+            }
+        }
     }
-    set set(data){
+    /**
+    * @function title
+    **/
+   get title()
+   {
+        return 'Lavosted Frameworks';
+   }
+    /**
+    * @function store
+    * @version 1.0
+    * @param {*} data
+    **/
+    set store(data)
+    {
         return this.data.push(data);
     }
     /**
-     * 
-     */
-	required()
-	{
-        (function(){
-            Function.prototype.d = function(){
-                return 'sa';
-            }
-
-        })
-        return 'ok'
-    }
-    /**
      * @function init
+     * @version 1.0
      * @param {*} data 
      */
 	init(data)
 	{
-        if (data.csrf) {
-            if (data.csrf.name || data.csrf.token) {
-                this.security(data.csrf.name, data.csrf.token);
+        try{
+            if(data.csrf !== undefined) {
+                if (data.csrf.name || data.csrf.token) {
+                    this.security(data.csrf.name, data.csrf.token);
+                }
             }
-        }
-        if(data.run)
-        {
-            if(data.run == 'development')
-            {
-                console.groupCollapsed('Information');
-                console.info('You are running Lavosted in development mode.');console.info('Make sure to turn on production mode when deploying for production');
-                console.groupEnd();
+            if(data.run !== undefined) {
+                if(data.run == 'development')
+                {
+                    console.groupCollapsed('Information');
+                    console.info('You are running Lavosted in development mode.');console.info('Make sure to turn on production mode when deploying for production');
+                    console.groupEnd();
+                }
+                else if(data.run == 'production'){
+                }
             }
-            else if(data.run == 'production'){
+            if(data.responsive !== undefined) {
+                if (data.responsive == true) {
+                    this.src('meta', {name : 'viewport', content : 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no'})
+                } else {
+                    return false;
+                }
             }
-        }
-        if (data.responsive) {
-            if (data.responsive == true) {
-                const meta = document.createElement('meta');
-                meta.name = 'viewport';
-                meta.content = 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no';
-                document.head.appendChild(meta);
-            } else {
-                return false;
+            if(data.headers !== undefined) {
+                if(data.headers.Authorization) {
+                    this.$apps[1] = data.headers.Authorization;
+                }
             }
+        }catch(e){
+            throw Error(e);
         }
     }
     src(type, option){
+        var data;
+        function init()
+        {
+            return 'init'
+        }
+        new init();
         const link = function(src)
         {
             window.addEventListener('DOMContentLoaded', function() {
-                var data = document.createElement('link');
+                data = document.createElement('link');
                 data.rel = 'stylesheet';
                 data.type = 'text/css';
                 data.href = src;
@@ -101,7 +112,7 @@ class L extends design{
         }
         const script = function(src) {
             window.addEventListener('DOMContentLoaded', function() {
-                var data = document.createElement('script');
+                data = document.createElement('script');
                 data.type = 'text/javascript';
                 data.src = src;
                 document.body.appendChild(data);
@@ -109,21 +120,36 @@ class L extends design{
         }
         const meta = function(name, content) {
             window.addEventListener('DOMContentLoaded', function() {
-                var data = document.createElement('meta');
+                data = document.createElement('meta');
                 data.name = name;
                 data.content = content;
                 document.head.appendChild(data);
             });
         }
+        const style = function(style) {
+            window.addEventListener('DOMContentLoaded', function() {
+                data = document.createElement('style');
+                data.type = 'text/css';
+                data.innerText = style;
+                document.head.appendChild(data);
+            });
+        }
         try{
-            if(type == 'link') {
-                link(option.src);
-            }
-            if(type == 'script') {
-                script(option.src);
-            }
-            if(type == 'meta') {
-                meta(option.name, option.content);
+            switch(type) {
+                case 'link':
+                    link(option.src);
+                    break;
+                case 'script':
+                    script(option.src);
+                    break;
+                case 'meta':
+                    meta(option.name, option.content);
+                    break;
+                case 'style':
+                    style(option);
+                    break;
+                case 'css':
+                    break;
             }
         }catch(e){
             throw Error(e);
@@ -169,6 +195,19 @@ class L extends design{
             }
         }catch(e){
             throw Error(e);
+        }
+    }
+    design(data)
+    {
+
+        const design = {
+            nav : function() {
+                console.log('nav');
+            }
+        };
+        if(data.nav.active == true){
+            this.src('link', {src : './css/__nav.css'});
+            design.nav();
         }
     }
     /**
@@ -412,17 +451,6 @@ class L extends design{
             throw Error(e);
         }
     }
-    style(init, data)
-    {
-        try{
-            var style = document.createElement('style');
-            style.type = 'text/css';
-            style.innerText = data;
-            document.head.appendChild(style);
-        }catch(e){
-            throw Error(e);
-        }
-    }
     event(classes, options)
     {
         const load = function(){
@@ -449,9 +477,7 @@ class L extends design{
     }
 	spa(data)
 	{
-        data.forEach(function(val, key){
-            console.log(val);
-        });
+        
 	}
 	component(init)
 	{

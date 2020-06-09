@@ -4,14 +4,23 @@
 	<title>Lavosted Framework</title>
 </head>
 <body>
-	<card class="hide">
+	<nav class="nav">
+		<div class="nav-link">
+			<ul>
+				<li><a href="#">LINK 1</a></li>
+				<li><a href="#">LINK 1</a></li>
+				<li><a href="#">LINK 1</a></li>
+			</ul>
+		</div>
+	</nav>
+	<!-- <card class="hide">
 		<h5 class="t-center">RESPONSIVE DESIGN BY LAVOSTED FRAMEWORK</h5>
 		<p>Mobile {s} : width(425px)</p>
 		<p>Tablet L {m}: width(425px - 768px)</p>
 		<p>Tablet M {l} : width(768px - 1024px)</p>
 		<p>Laptop L {xl} : width(1024px - 1440px)</p>
 		<p>Laptop Hight {lg} : width(1440px - ???)</p>
-	</card>
+	</card> -->
 <div class="container-auto">
 	<input type="hidden" name="data">
 	<div class="bg-cyan t-center col s12 cy">Hello</div>
@@ -26,20 +35,29 @@
 <!--<script type="text/javascript" src="./js/lavosted.js"></script>-->
 <script src="./dist/main.js"></script>
 <script>
+L.design({
+	nav : {
+		active : true,
+		menu : '400px'
+	},
+});
 L.init({
 	responsive: true,
 	run: 'development',
-	route: true
+	route: true,
+	headers: {
+		Authorization : 'as'
+	},
 });
-L.set = 'asd';
-L.set = 'asd';
-L.set = 'asd';
+L.store = 'asd';
+L.store = 'asd';
+L.store = 'asd';
 L.src('link', {src : './css/__responsive.css'});
 L.src('link', {src : './css/__background.css'});
 L.src('link', {src : './css/__helper.css'});
 L.src('link', {src : './css/__required.css'});
 L.html('.col', 'KOns');
-L.style('.cy', '.cy {background-color: red;}');
+L.src('style', '.cy{background-color: red;}');
 // L.headers(['Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTQzYjk3YmYzMzYzNmVjYzgyZDE2MzJhNGI1OTU2YmNkNTliMWQ1YjdiMzc0NjA4YWFkMjFiODNkY2Q5NTYyMDRlMzJjZjM3NzU4M2NhM2YiLCJpYXQiOjE1OTAzMjQ3MjAsIm5iZiI6MTU5MDMyNDcyMCwiZXhwIjoxNjIxODYwNzE5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Usyequm2ENFoMfbaIzmfeiMSK0XGVTlt4OkLvQMJvQlrXkkZD5zIh_Sq9QRJtd7TNyWE-L9Z_8ChO5PRTl6UEfWPgXW_jY_jpqpgRIF9dMRfw8JXSFe_NlVnrjo5KfaXJWt4eOW2rZnE4JdFnuaMg_2-yWBCLaPp6gGXJ-FNXQEEZuld5VsaEyzlTIVu-U_DxVYLq6eeBTZFeBnueLGBZ4yPZ4MM1O1S5_Am_VydcHVGxgWQLEnKG8-DyM2gogaB4cP6o2IV93ibhgzuuHOTc3rzM-hYFG4P39m1I34SshGpQpO57yZb34VoG_V0VPOxZ4shuCCMCjYefP25O5XMnlO1amvE5yLn3n8KjgoJDpcb8bWzdQvRtKi4aFIkgbevhzYNJpq7OFrDqDG6o1QjM5Uw9v-yIWMtZlkqrDKuva_hxzlpAUgiwa-jaxIDZiQGNhrj5UPF3bhMHe7EoRvuPrW6UpbLytJ4EZRF-ZJHd2PbUhA28HqpGpIQ6Zxq6ac-IBix6TGqONIY2436__tA69TCjTaYnP9Z_yLSyDqDgVuv4lePR1sZUVJQMBxNi9bqr2LGViObkb7o0Lcxb-NOmyzsAlJk6DHYB0uKEvmwqit250KQoe2rr2E23RyxnX8G9AxahHVDeb6_PVVdSeE-iEBbaS_Oi_DniAsnEBTeXjk'], 'debug-close');
 // setTimeout(function(){
 // 	L.api(L.stringify({method: 'get', url: 'http://online.us/api/category'})).then(result => {
