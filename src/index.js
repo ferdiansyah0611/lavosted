@@ -19,13 +19,28 @@ class L{
         this.data = [];
         /*doms*/
         this.doms = {
-            class : function(data){
-                return document.getElementsByClassName(data);
+            classes : function(data, option = ''){
+                if(option.style !== undefined) {
+                    var style = option.style;
+                    var value = option.value;
+                    var classes = document.getElementsByClassName(data);
+                    switch(style){
+                        case 'display':
+                            for (var i = 0; i < classes.length; i++) {
+                                classes[i].style.display = value;
+                            }
+                        break;
+                    }
+                    return document.getElementsByClassName(data);
+                }
+                else {
+                    return document.getElementsByClassName(data);
+                }
             },
-            id: function(data){
+            id: function(data, option){
                 return document.getElementById(data);
             },
-            name : function(data){
+            name : function(data, option){
                 return document.getElementsByName(data);
             },
             query : function(data){
@@ -78,16 +93,11 @@ class L{
                 }
             }
             if(data.responsive !== undefined) {
-                if (data.responsive == true) {
-                    this.src('meta', {name : 'viewport', content : 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no'})
-                } else {
-                    return false;
-                }
+                this.src('meta', {name : 'viewport', content : 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no'})
+                this.src('link', {src : './css/__responsive.css'});
             }
             if(data.headers !== undefined) {
-                if(data.headers.Authorization) {
-                    this.$apps[1] = data.headers.Authorization;
-                }
+                this.$apps[1] = data.headers.Authorization;
             }
         }catch(e){
             throw Error(e);
@@ -148,8 +158,7 @@ class L{
                 case 'style':
                     style(option);
                     break;
-                case 'css':
-                    break;
+                return true;
             }
         }catch(e){
             throw Error(e);
@@ -199,10 +208,14 @@ class L{
     }
     design(data)
     {
-
+        var query;
         const design = {
             nav : function() {
                 console.log('nav');
+                query = document.querySelectorAll('nav.nav');
+                query.forEach(function(v, i){
+                    console.log(query[i].innerHTML);
+                });
             }
         };
         if(data.nav.active == true){
