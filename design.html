@@ -7,22 +7,14 @@
 	<nav class="nav">
 		<div class="nav-link">
 			<ul>
-				<li><a href="#">LINK 1 <div class="menu icon"></div></a></li>
+				<li><a href="#">LINK 1</a></li>
 				<li><a href="#">LINK 1</a></li>
 				<li><a href="#">LINK 1</a></li>
 			</ul>
 		</div>
 	</nav>
-	<!-- <card class="hide">
-		<h5 class="t-center">RESPONSIVE DESIGN BY LAVOSTED FRAMEWORK</h5>
-		<p>Mobile {s} : width(425px)</p>
-		<p>Tablet L {m}: width(425px - 768px)</p>
-		<p>Tablet M {l} : width(768px - 1024px)</p>
-		<p>Laptop L {xl} : width(1024px - 1440px)</p>
-		<p>Laptop Hight {lg} : width(1440px - ???)</p>
-	</card> -->
 <div class="row-3 s2 mt5">
-	<div class="bg-cyan col">Hello</div>
+	<div class="bg-cyan col">Hello <div class="menu icon" id="idmenu"></div></div>
 	<div class="bg-cyan col">Hello</div>
 	<div class="bg-cyan col">Hello</div>
 	<div class="bg-cyan col">Hello</div>
@@ -41,13 +33,13 @@
 	<div class="bg-cyan col">Hello</div>
 	<div class="bg-cyan col">Hello</div>
 </div>
-<!--<script type="text/javascript" src="./js/lavosted.js"></script>-->
 <script src="./dist/main.js"></script>
 <script>
 L.design({
 	nav : {
 		active : true,
-		menu : '400px'
+		menu : '400px',
+		id : 'idmenu'
 	},
 });
 L.init({
@@ -58,8 +50,6 @@ L.init({
 		Authorization : 'as'
 	},
 });
-L.store = 'asd';
-L.store = 'asd';
 L.store = 'asd';
 L.src('link', {src : './css/__background.css'});
 L.src('link', {src : './css/__helper.css'});
@@ -82,3 +72,11 @@ L.src('style', '.cy{background-color: red;}');
 </script>
 </body>
 </html>
+<!-- <card class="hide">
+		<h5 class="t-center">RESPONSIVE DESIGN BY LAVOSTED FRAMEWORK</h5>
+		<p>Mobile {s} : width(425px)</p>
+		<p>Tablet L {m}: width(425px - 768px)</p>
+		<p>Tablet M {l} : width(768px - 1024px)</p>
+		<p>Laptop L {xl} : width(1024px - 1440px)</p>
+		<p>Laptop Hight {lg} : width(1440px - ???)</p>
+	</card> -->
