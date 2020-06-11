@@ -1,0 +1,15 @@
+.form-default > input[type="text"] {
+    padding: 10px 5px 5px 10px;
+    letter-spacing: 1px;
+    width: auto;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 3px solid #4446464a;
+    background-color: #e0e0e0;
+}
+
+.form-default > input[type="text"]:focus {
+    transition: 1s all;
+    background: #f1f1f1;
+}

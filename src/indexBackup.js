@@ -10,7 +10,6 @@ $defaults = [
 1: headers
 ]
  */
-var active = {};
 class L{
 	constructor()
 	{
@@ -18,62 +17,13 @@ class L{
         this.$apps = [];
         /*store data*/
         this.data = [];
-        this.active = function(app)
-        {
-            return Object.create(app);
-        }
         /*doms*/
         this.dom = function()
         {
             var data = {};
             data.id = function(defined)
             {
-                var data_id = {};
-                data_id.get = function()
-                {
-                    return document.getElementById(defined);
-                }
-                data_id.height = function()
-                {
-                    return document.getElementById(defined).offsetHeight;
-                }
-                data_id.width = function()
-                {
-                    return document.getElementById(defined).offsetWidth;
-                }
-                data_id.parent = function()
-                {
-                    return document.getElementById(defined).offsetParent;
-                }
-                data_id.val = function(append = '')
-                {
-                    if(append !== ''){
-                        return document.getElementById(defined).value = append
-                    }else{
-                        return document.getElementById(defined).value;
-                    }
-                }
-                data_id.del = function()
-                {
-                    return document.getElementById(defined).remove();
-                }
-                data_id.attr = function(append = '', value = '')
-                {
-                    var app = document.getElementById(defined).getAttribute(append);
-                    if(app == null){
-                        throw Error('Null');
-                    }
-                    if(append !== ''){
-                        if(value !== ''){
-                            document.getElementById(defined).setAttribute(append, value);
-                        }else{
-                            throw Error('Value Null');
-                        }
-                    }else{
-                        throw Error('Null');
-                    }
-                }
-                return Object.create(data_id);
+                return document.getElementById(defined);
             }
             data.class = function(defined)
             {
@@ -134,15 +84,13 @@ class L{
             if(data.headers !== undefined) {
                 this.$apps[1] = data.headers.Authorization;
             }
-            if(data.form !== undefined) {
-                this.src('./css/__form.css').link();
-            }
         }catch(e){
             throw Error(e);
         }
     }
     src(source){
-        var data = {}; var app;
+        var data = {};
+        var app;
         data.link = function()
         {
             window.addEventListener('DOMContentLoaded', function() {
@@ -224,187 +172,107 @@ class L{
             throw Error(e);
         }
     }
-    design(app = '')
+    design(data)
     {
-        var data = {};
-        active.id = 'asd';
-        data.nav = function(data, resize = '')
-        {
-            var query, id, mobile, content_nav_open, content_nav_close, nav_close;
-            content_nav_open = '<div class="nav-mobile">';
-            content_nav_close = '</div>';
-            nav_close = '<div class="nav-mobile-close"></div>';
-            new L().src('./css/__nav.css').link();
-            if(resize !== undefined){
-                window.addEventListener('load', function(){
-                    query = document.querySelectorAll('nav.nav');
-                    new L().html('body', content_nav_open + query[0].innerHTML, content_nav_close + nav_close)
-                    id = document.getElementById(data);
-                    mobile = [];
-                    mobile[0] = document.getElementsByClassName('nav-mobile')[0];
-                    mobile[1] = document.getElementsByClassName('nav-mobile-close')[0];
-                    mobile[0].style.marginLeft = '-300px';
-                    mobile[1].style.display = 'none';
-                    /*menu click*/
-                    id.addEventListener('click', function(){
-                        mobile[0].style.position = 'fixed';
-                        mobile[0].style.zIndex = '999999';
-                        mobile[0].style.backgroundColor = '#0ff';
-                        mobile[0].style.top = '0';
-                        mobile[0].style.left = '0';
-                        mobile[0].style.width = '300px';
-                        mobile[0].style.height = '100%';
-                        mobile[0].style.transition = 'all 0.1s ease 0s';
-                        mobile[0].style.marginLeft = '0';
-                        mobile[1].style.display = 'block';
-                        mobile[1].style.position = 'fixed';
-                        mobile[1].style.zIndex = '99999';
-                        mobile[1].style.backgroundColor = 'rgb(173 173 173 / 58%)';
-                        mobile[1].style.width = '100%';
-                        mobile[1].style.top = '0';
-                        mobile[1].style.left = '0';
-                        mobile[1].style.height = '100%';
-                        document.body.classList.add('nav-open');
-                    });
-                    /*overlay click*/
-                    mobile[1].addEventListener('click', function(){
-                        mobile[0].style.marginLeft = '-300px';
-                        mobile[1].style.display = 'none';
-                        document.body.classList.remove('nav-open');
-                    });
-                    /*move*/
-                    mobile[1].addEventListener('touchmove', function(e){
-                        if(e.changedTouches[0].pageX > 560){
+        var query, id, mobile, content_nav_open, content_nav_close, nav_close;
+        content_nav_open = '<div class="nav-mobile">';
+        content_nav_close = '</div>';
+        nav_close = '<div class="nav-mobile-close"></div>';
+        const design = {
+            nav : function(data)
+            {
+                const menu = function(data, resize = '')
+                {
+                    if(resize !== undefined){
+                        function size_window(){
+                            var w = document.documentElement.clientWidth;
+                            var h = document.documentElement.clientHeight;
+                            console.log("Width: " + w + ", " + "Height: " + h);
+                            return w;
                         }
-                        if(e.changedTouches[0].pageX > 100 && e.changedTouches[0].pageX < 560)
-                        {
-                            mobile[0].style.marginLeft = e.changedTouches[0].pageX + 360 - mobile[1].offsetWidth + 'px';
-                        }
-                        else{
-                            mobile[0].style.marginLeft = e.changedTouches[0].pageX + 100 - mobile[1].offsetWidth + 'px';
-                            if(mobile[0].offsetLeft < -250){
-                                mobile[0].classList.add('close');
+                        var resizes = window.addEventListener('resize', size_window);
+                        window.addEventListener('load', function(){
+                            query = document.querySelectorAll('nav.nav');
+                            new L().html('body', content_nav_open + query[0].innerHTML, content_nav_close + nav_close)
+                            id = document.getElementById(data);
+                            mobile = [];
+                            mobile[0] = document.getElementsByClassName('nav-mobile')[0];
+                            mobile[1] = document.getElementsByClassName('nav-mobile-close')[0];
+                            mobile[0].style.marginLeft = '-300px';
+                            mobile[1].style.display = 'none';
+                            /*menu click*/
+                            id.addEventListener('click', function(){
+                                mobile[0].style.position = 'fixed';
+                                mobile[0].style.zIndex = '999999';
+                                mobile[0].style.backgroundColor = '#0ff';
+                                mobile[0].style.top = '0';
+                                mobile[0].style.left = '0';
+                                mobile[0].style.width = '300px';
+                                mobile[0].style.height = '100%';
+                                mobile[0].style.transition = 'all 0.1s ease 0s';
+                                mobile[0].style.marginLeft = '0';
+                                mobile[1].style.display = 'block';
+                                mobile[1].style.position = 'fixed';
+                                mobile[1].style.zIndex = '99999';
+                                mobile[1].style.backgroundColor = 'rgb(173 173 173 / 58%)';
+                                mobile[1].style.width = '100%';
+                                mobile[1].style.top = '0';
+                                mobile[1].style.left = '0';
+                                mobile[1].style.height = '100%';
+                                document.body.classList.add('nav-open');
+                            });
+                            /*overlay click*/
+                            mobile[1].addEventListener('click', function(){
                                 mobile[0].style.marginLeft = '-300px';
                                 mobile[1].style.display = 'none';
                                 document.body.classList.remove('nav-open');
-                            }
-                        }
-                    });
-                    /*end move*/
-                    mobile[1].addEventListener('touchend', function(e){
-                        if(mobile[0].offsetLeft < -250){
-                            mobile[0].style.marginLeft = '-300px';
-                            mobile[1].style.display = 'none';
-                            document.body.classList.remove('nav-open');
-                        }else{
-                            mobile[0].style.marginLeft = '0';
-                        }
-                    });
-                });
-            }else{
+                            });
+                            /*move*/
+                            mobile[1].addEventListener('touchmove', function(e){
+                                if(e.changedTouches[0].pageX > 560){
+                                }
+                                if(e.changedTouches[0].pageX > 100 && e.changedTouches[0].pageX < 560)
+                                {
+                                    mobile[0].style.marginLeft = e.changedTouches[0].pageX + 360 - mobile[1].offsetWidth + 'px';
+                                }
+                                else{
+                                    mobile[0].style.marginLeft = e.changedTouches[0].pageX + 100 - mobile[1].offsetWidth + 'px';
+                                    if(mobile[0].offsetLeft < -250){
+                                        mobile[0].classList.add('close');
+                                        mobile[0].style.marginLeft = '-300px';
+                                        mobile[1].style.display = 'none';
+                                        document.body.classList.remove('nav-open');
+                                    }
 
+                                }
+                            });
+                            /*end move*/
+                            mobile[1].addEventListener('touchend', function(e){
+                                if(mobile[0].offsetLeft < -250){
+                                    mobile[0].style.marginLeft = '-300px';
+                                    mobile[1].style.display = 'none';
+                                    document.body.classList.remove('nav-open');
+                                }else{
+                                    mobile[0].style.marginLeft = '0';
+                                }
+                            });
+                        });
+                        size_window();
+                    }
+                }
+                menu(data);
+                
+            }
+        };
+        if(data.nav.active == true){
+            this.src('./css/__nav.css').link();
+            if(data.nav.menu !== undefined){
+                design.nav(data.nav.id, data.nav.menu);
+            }
+            else{
+                design.nav(data.nav.id);
             }
         }
-        return Object.create(data);
-        // var query, id, mobile, content_nav_open, content_nav_close, nav_close;
-        // content_nav_open = '<div class="nav-mobile">';
-        // content_nav_close = '</div>';
-        // nav_close = '<div class="nav-mobile-close"></div>';
-        // const design = {
-        //     nav : function(data)
-        //     {
-        //         const menu = function(data, resize = '')
-        //         {
-        //             if(resize !== undefined){
-        //                 function size_window(){
-        //                     var w = document.documentElement.clientWidth;
-        //                     var h = document.documentElement.clientHeight;
-        //                     console.log("Width: " + w + ", " + "Height: " + h);
-        //                     return w;
-        //                 }
-        //                 var resizes = window.addEventListener('resize', size_window);
-        //                 window.addEventListener('load', function(){
-        //                     query = document.querySelectorAll('nav.nav');
-        //                     new L().html('body', content_nav_open + query[0].innerHTML, content_nav_close + nav_close)
-        //                     id = document.getElementById(data);
-        //                     mobile = [];
-        //                     mobile[0] = document.getElementsByClassName('nav-mobile')[0];
-        //                     mobile[1] = document.getElementsByClassName('nav-mobile-close')[0];
-        //                     mobile[0].style.marginLeft = '-300px';
-        //                     mobile[1].style.display = 'none';
-        //                     /*menu click*/
-        //                     id.addEventListener('click', function(){
-        //                         mobile[0].style.position = 'fixed';
-        //                         mobile[0].style.zIndex = '999999';
-        //                         mobile[0].style.backgroundColor = '#0ff';
-        //                         mobile[0].style.top = '0';
-        //                         mobile[0].style.left = '0';
-        //                         mobile[0].style.width = '300px';
-        //                         mobile[0].style.height = '100%';
-        //                         mobile[0].style.transition = 'all 0.1s ease 0s';
-        //                         mobile[0].style.marginLeft = '0';
-        //                         mobile[1].style.display = 'block';
-        //                         mobile[1].style.position = 'fixed';
-        //                         mobile[1].style.zIndex = '99999';
-        //                         mobile[1].style.backgroundColor = 'rgb(173 173 173 / 58%)';
-        //                         mobile[1].style.width = '100%';
-        //                         mobile[1].style.top = '0';
-        //                         mobile[1].style.left = '0';
-        //                         mobile[1].style.height = '100%';
-        //                         document.body.classList.add('nav-open');
-        //                     });
-        //                     /*overlay click*/
-        //                     mobile[1].addEventListener('click', function(){
-        //                         mobile[0].style.marginLeft = '-300px';
-        //                         mobile[1].style.display = 'none';
-        //                         document.body.classList.remove('nav-open');
-        //                     });
-        //                     /*move*/
-        //                     mobile[1].addEventListener('touchmove', function(e){
-        //                         if(e.changedTouches[0].pageX > 560){
-        //                         }
-        //                         if(e.changedTouches[0].pageX > 100 && e.changedTouches[0].pageX < 560)
-        //                         {
-        //                             mobile[0].style.marginLeft = e.changedTouches[0].pageX + 360 - mobile[1].offsetWidth + 'px';
-        //                         }
-        //                         else{
-        //                             mobile[0].style.marginLeft = e.changedTouches[0].pageX + 100 - mobile[1].offsetWidth + 'px';
-        //                             if(mobile[0].offsetLeft < -250){
-        //                                 mobile[0].classList.add('close');
-        //                                 mobile[0].style.marginLeft = '-300px';
-        //                                 mobile[1].style.display = 'none';
-        //                                 document.body.classList.remove('nav-open');
-        //                             }
-
-        //                         }
-        //                     });
-        //                     /*end move*/
-        //                     mobile[1].addEventListener('touchend', function(e){
-        //                         if(mobile[0].offsetLeft < -250){
-        //                             mobile[0].style.marginLeft = '-300px';
-        //                             mobile[1].style.display = 'none';
-        //                             document.body.classList.remove('nav-open');
-        //                         }else{
-        //                             mobile[0].style.marginLeft = '0';
-        //                         }
-        //                     });
-        //                 });
-        //                 size_window();
-        //             }
-        //         }
-        //         menu(data);
-                
-        //     }
-        // };
-        // if(data.nav.active == true){
-        //     this.src('./css/__nav.css').link();
-        //     if(data.nav.menu !== undefined){
-        //         design.nav(data.nav.id, data.nav.menu);
-        //     }
-        //     else{
-        //         design.nav(data.nav.id);
-        //     }
-        // }
     }
     /**
      * @function api
@@ -702,8 +570,6 @@ class L{
         return JSON.stringify(data);
     }
 }
-Object.create(active);
-window.L_active = active;
 window.L = new L();
 var Lavosted = new L();
 export default Lavosted;
