@@ -1,9 +1,5 @@
 # Lavosted
-Lavosted is a frontend framework for websites. Lavosted is simpler to use compared to other framewok because lavosted only defines what class is needed, the css file will be called automatically so that lavosted is lightweight to use and improves website performance
-
-## Getting Started
-
-Before using lavosted, add jquery.js to your website. It is confirmed that jquery.js is before lavosted
+Lavosted is a frontend framework for websites. Lavosted is simpler to use compared to other framewok because lavosted only defines what class is needed, the css file will be called automatically so that lavosted is lightweight to use and improves website performance. Alternative besides jquery and bootstrap
 
 ### Installing
 
