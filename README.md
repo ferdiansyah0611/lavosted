@@ -17,33 +17,83 @@ What things you need to install the software and how to install them
 	<title>Lavosted Framework</title>
 </head>
 <body>
-<div class="container-auto">
-	<input type="hidden" name="data">
-	<div class="bg-cyan t-center col s12 cy">Hello</div>
-	<div class="bg-cyan t-center col s11">Hello</div>
-	<div class="bg-cyan t-center col s10">Hello</div>
-	<div class="bg-cyan t-center col s9">Hello</div>
-	<div class="bg-cyan t-center col s8">Hello</div>
-	<div class="bg-cyan t-center col s7">Hello</div>
-	<div class="bg-cyan t-center col s6">Hello</div>
-	<div class="bg-cyan t-center col s5">Hello</div>
+	<div class="navbar">
+		<nav class="nav">
+			<div class="nav-link">
+				<ul>
+					<li><a href="#">LINK 1</a></li>
+					<li><a href="#">LINK 1</a></li>
+					<li><input id="form" type="search" name="search"></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="data-nav">
+			<ul>
+				<li><div class="menu icon" id="idmenu"></div></li>
+			</ul>
+		</div>
+	</div>
+<div class="container mt5">
+	<h4>Column</h4>
+	<div class="row">
+		<div class="bg-cyan col">Hello</div>
+		<div class="bg-cyan col">Hello</div>
+		<div class="bg-cyan col">Hello</div>
+		<div class="bg-cyan col">Hello</div>
+		<div class="bg-cyan col">Hello</div>
+		<div class="bg-cyan col">Hello</div>
+		<div class="bg-cyan col">Hello</div>
+		<div class="bg-cyan col">Hello</div>
+	</div>
+	<div class="row gp-0" style="margin-top: 50px;">
+		<div class="bg-cyan col">Hello</div>
+		<div class="bg-cyan col">Hello</div>
+		<div class="bg-cyan col">Hello</div>
+		<div class="bg-cyan col">Hello</div>
+		<div class="bg-cyan col">Hello</div>
+		<div class="bg-cyan col">Hello</div>
+		<div class="bg-cyan col">Hello</div>
+		<div class="bg-cyan col">Hello</div>
+	</div>
+</div>
+<div class="container mt5">
+	<h4>Forms</h4>
+	<div class="row-1">
+		<div class="form-default">
+			<label for="name">Name</label>
+			<input type="text" name="name" id="name">
+		</div>
+	</div>
 </div>
 <script src="./dist/main.js"></script>
 <script>
+/*L.design({
+	nav : {
+		active : true,
+		menu : '400px',
+		id : 'idmenu'
+	},
+});*/
 L.init({
 	responsive: true,
 	run: 'development',
-	route: true
+	route: true,
+	headers: {
+		Authorization : 'as'
+	},
+	form: true
 });
-L.set = 'asd';
-L.set = 'asd';
-L.set = 'asd';
-L.src('link', {src : './css/__responsive.css'});
-L.src('link', {src : './css/__background.css'});
-L.src('link', {src : './css/__helper.css'});
-L.src('link', {src : './css/__required.css'});
-L.html('.col', '<p>Test HTML append</p>');
-L.style('.cy', '.cy {background-color: red;}');
+L.store = 'asd';
+L.design().nav('idmenu', {
+	menu : 600
+})
+L.src('./css/__background.css').link();
+L.src('./css/__helper.css').link();
+L.src('./css/__required.css').link();
+L.src('./css/__icon.css').link();
+L.html('.col', 'KOns');
+L.src('.cy{background-color: red;}').style();
+L.dom().id('form').val('asd');
 </script>
 </body>
 </html>
