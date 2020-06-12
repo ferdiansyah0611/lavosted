@@ -1,3 +1,6 @@
+.form-default{
+    margin: 5px;
+}
 .form-default > input[type="text"] {
     padding: 10px 5px 5px 10px;
     letter-spacing: 1px;
@@ -5,11 +8,86 @@
     border-top: 0;
     border-left: 0;
     border-right: 0;
-    border-bottom: 3px solid #4446464a;
-    background-color: #e0e0e0;
+    border-bottom: 3px solid #1313134a;
+    background-color: #eee;
+    float: left;
+    transition: all 1s;
+    font-family: 'roboto';
 }
-
-.form-default > input[type="text"]:focus {
+.form-default > textarea {
+    padding: 10px 5px 5px 10px;
+    letter-spacing: 1px;
+    width: auto;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 3px solid #1313134a;
+    background-color: #eee;
+    float: left;
+    transition: all 1s;
+    font-family: 'roboto';
+}
+.form-default > input[type="text"]:focus, .form-default > input[type="number"]:focus, .form-default > input[type="date"]:focus, .form-default > textarea:focus {
     transition: 1s all;
     background: #f1f1f1;
+    border-bottom: 3px solid #151515;
+}
+.form-default > label{
+    font-size: 13px;
+    padding: 10px;
+    float: left;
+}
+.form-default > input[type="number"]{
+    padding: 10px 5px 5px 10px;
+    letter-spacing: 1px;
+    width: auto;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 3px solid #4446464a;
+    float: left;
+    background-color: #eee;
+    font-family: 'roboto';
+}
+.form-default > input[type="date"]{
+    padding: 10px 5px 5px 10px;
+    letter-spacing: 1px;
+    width: auto;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 3px solid #4446464a;
+    float: left;
+    background-color: #eee;
+    font-family: 'roboto';
+}
+/*mobile {s}*/
+@media screen and (max-width: 424px)
+{
+    .form-default{
+        padding: 0;
+    }
+    .form-default > input[type="text"], .form-default > input[type="number"], .form-default > input[type="date"] {
+        width: 96%;
+    }
+    .form-default > textarea{
+        width: 96%;
+        min-height: 50px;
+    }
+}
+/*tablet {m}*/
+@media screen and (min-width: 425px) and (max-width: 768px)
+{
+}
+/*tablet {l}*/
+@media screen and (min-width: 768px) and (max-width: 1024px)
+{
+}
+/*laptop large {xl}*/
+@media screen and (min-width: 1024px) and (max-width: 1440px)
+{
+}
+/*super large {lg}*/
+@media screen and (min-width: 1440px)
+{
 }

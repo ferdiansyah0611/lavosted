@@ -23,13 +23,20 @@
 <div class="container mt5">
 	<h4>Column</h4>
 	<div class="row">
+		<div class="bg-cyan col">
+			<div class="card">
+				<div class="card-b">
+					Hello
+				</div>
+				
+			</div>
+		</div>
+		<div class="bg-red col">Hello</div>
+		<div class="bg-cyan col">HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello</div>
 		<div class="bg-cyan col">Hello</div>
 		<div class="bg-cyan col">Hello</div>
 		<div class="bg-cyan col">Hello</div>
-		<div class="bg-cyan col">Hello</div>
-		<div class="bg-cyan col">Hello</div>
-		<div class="bg-cyan col">Hello</div>
-		<div class="bg-cyan col">Hello</div>
+		<div class="bg-blue col">Hello</div>
 		<div class="bg-cyan col">Hello</div>
 	</div>
 	<div class="row gp-0" style="margin-top: 50px;">
@@ -45,13 +52,44 @@
 </div>
 <div class="container mt5">
 	<h4>Forms</h4>
+	<div class="row">
+	</div>
+</div>
+<div class="form-default">
+	<label for="name">Text</label>
+	<input type="text" name="name" id="name">
+</div>
+<div class="form-default">
+	<label for="number">Number</label>
+	<input type="number" name="number" id="number">
+</div>
+<div class="form-default">
+	<label for="date">Text</label>
+	<input type="date" name="date" id="date">
+</div>
+<div class="form-default">
+	<label for="textarea">Text</label>
+	<textarea name="textarea" id="textarea"></textarea>
+</div>
+<div class="container">
 	<div class="row-1">
-		<div class="form-default">
-			<label for="name">Name</label>
-			<input type="text" name="name" id="name">
+		<div class="card">
+			<div class="card-h">Card</div>
+			<div class="card-b">
+				Body
+			</div>
+			<div class="card-f">
+				Footer
+			</div>
 		</div>
 	</div>
 </div>
+<button class="btn primary">Primary</button>
+<button class="btn secondary">secondary</button>
+<button class="btn success">success</button>
+<button class="btn info">info</button>
+<button class="btn warning">warning</button>
+<button class="btn danger">danger</button>
 <script src="./dist/main.js"></script>
 <script>
 /*L.design({
@@ -68,9 +106,13 @@ L.init({
 	headers: {
 		Authorization : 'as'
 	},
-	form: true
+	form: true,
+	helper: true,
+	component: {
+		button: true,
+		card: true
+	}
 });
-L.store = 'asd';
 L.design().nav('idmenu', {
 	menu : 600
 })
@@ -78,9 +120,24 @@ L.src('./css/__background.css').link();
 L.src('./css/__helper.css').link();
 L.src('./css/__required.css').link();
 L.src('./css/__icon.css').link();
-L.html('.col', 'KOns');
+L.html('.col', '<p>Append</p>');
 L.src('.cy{background-color: red;}').style();
 L.dom().id('form').val('asd');
+L.api('https://api.apis.guru/v2/metrics.json').get({
+	success: function(a){
+		console.log(a)
+	},
+	error: function(message, status){
+		console.error(message);
+	}
+});
+// L.ap({
+// 	method : 'get',
+// 	url : 'https://api.apis.guru/v2/metrics.json',
+// 	success : function(a){
+// 		console.log(a)
+// 	}
+// })
 // L.doms.class('bg-cyan', {
 // 	style : 'display',
 // 	value : 'block'
