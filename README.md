@@ -13,63 +13,10 @@ What things you need to install the software and how to install them
 	<title>Lavosted Framework</title>
 </head>
 <body>
-	<div class="navbar">
-		<nav class="nav">
-			<div class="nav-link">
-				<ul>
-					<li><a href="#">LINK 1</a></li>
-					<li><a href="#">LINK 1</a></li>
-					<li><input id="form" type="search" name="search"></li>
-				</ul>
-			</div>
-		</nav>
-		<div class="data-nav">
-			<ul>
-				<li><div class="menu icon" id="idmenu"></div></li>
-			</ul>
-		</div>
-	</div>
-<div class="container mt5">
-	<h4>Column</h4>
-	<div class="row">
-		<div class="bg-cyan col">Hello</div>
-		<div class="bg-cyan col">Hello</div>
-		<div class="bg-cyan col">Hello</div>
-		<div class="bg-cyan col">Hello</div>
-		<div class="bg-cyan col">Hello</div>
-		<div class="bg-cyan col">Hello</div>
-		<div class="bg-cyan col">Hello</div>
-		<div class="bg-cyan col">Hello</div>
-	</div>
-	<div class="row gp-0" style="margin-top: 50px;">
-		<div class="bg-cyan col">Hello</div>
-		<div class="bg-cyan col">Hello</div>
-		<div class="bg-cyan col">Hello</div>
-		<div class="bg-cyan col">Hello</div>
-		<div class="bg-cyan col">Hello</div>
-		<div class="bg-cyan col">Hello</div>
-		<div class="bg-cyan col">Hello</div>
-		<div class="bg-cyan col">Hello</div>
-	</div>
-</div>
-<div class="container mt5">
-	<h4>Forms</h4>
-	<div class="row-1">
-		<div class="form-default">
-			<label for="name">Name</label>
-			<input type="text" name="name" id="name">
-		</div>
-	</div>
-</div>
+	<div class="col"></div>
 <script src="./dist/main.js"></script>
 <script>
-/*L.design({
-	nav : {
-		active : true,
-		menu : '400px',
-		id : 'idmenu'
-	},
-});*/
+/*Initialize*/
 L.init({
 	responsive: true,
 	run: 'development',
@@ -77,19 +24,74 @@ L.init({
 	headers: {
 		Authorization : 'as'
 	},
-	form: true
 });
-L.store = 'asd';
-L.design().nav('idmenu', {
-	menu : 600
-})
+/*DOM Manipulation*/
+L.dom().id('id_element').get();
+L.dom().id('id_element').height();
+L.dom().id('id_element').width();
+L.dom().id('id_element').parent();
+L.dom().id('id_element').val(append = '');
+L.dom().id('id_element').del();
+L.dom().id('id_element').attr(name_attribute, value_attribute);
+L.dom().id('id_element').addClass(name_class);
+L.dom().id('id_element').removeClass(name_class);
+L.dom().id('id_element').toggleClass(name_class);
+
+L.dom().class('class_element').get();
+L.dom().class('class_element').height(length_class);
+L.dom().class('class_element').width(length_class);
+L.dom().class('class_element').parent(length_class);
+L.dom().class('class_element').val(length_class, append = '');
+L.dom().class('class_element').del(length_class);
+L.dom().class('class_element').attr(length_class, name_attribute, value_attribute);
+L.dom().class('class_element').addClass(length_class, name_class);
+L.dom().class('class_element').removeClass(length_class, name_class);
+L.dom().class('class_element').toggleClass(length_class, name_class);
+
+/*ADD RESOURCES ON DOMContentLoaded*/
 L.src('./css/__background.css').link();
-L.src('./css/__helper.css').link();
-L.src('./css/__required.css').link();
-L.src('./css/__icon.css').link();
-L.html('.col', 'KOns');
+L.src('./css/__background.js').script();
+L.src({name : 'name_meta', content : 'content_meta'}).meta();
 L.src('.cy{background-color: red;}').style();
-L.dom().id('form').val('asd');
+
+/*STORAGE*/
+L.local({
+	type: 'get',
+	name: 'name localStorage',
+	success: function(data){
+		console.log(data);
+		console.log('Parse : ' + L.parse(data));
+	}
+});
+L.local({
+	type: 'set',
+	name: 'name sessionStorage',
+	data: L.stringify({app : 'anyting'})
+});
+L.session({
+	type: 'get',
+	name: 'name sessionStorage',
+	success: function(data){
+		console.log(data);
+		console.log('Parse : ' + L.parse(data));
+	}
+});
+L.session({
+	type: 'set',
+	name: 'name sessionStorage',
+	data: L.stringify({app : 'anyting'})
+});
+
+L.html('.col', '<p>Append</p>');
+/*AJAX API*/
+L.api('https://api.apis.guru/v2/metrics.json').get({
+	success: function(data){
+		console.log(data)
+	},
+	error: function(message, status){
+		console.error(message);
+	}
+});
 </script>
 </body>
 </html>
