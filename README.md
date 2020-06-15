@@ -1,5 +1,6 @@
 # Lavosted
-Lavosted is a frontend framework for websites. Lavosted is simpler to use compared to other framewok because lavosted only defines what class is needed, the css file will be called automatically so that lavosted is lightweight to use and improves website performance. Alternative besides jquery and bootstrap
+Lavosted is a frontend framework js for websites. Lavosted is results compiler and simple to use compared to other framewok so that lavosted is lightweight to use and improves website performance.
+ In the future, the addition of new features for more modern websites is to use a single page application and typescript.
 
 ### Installing
 
@@ -92,11 +93,14 @@ L.api('https://api.apis.guru/v2/metrics.json').get({
 		console.error(message);
 	}
 });
+/*JSON*/
+L.stringify('your data json');
+L.parse('your data json');
 </script>
 </body>
 </html>
 ```
-
+## Check the latest version
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
