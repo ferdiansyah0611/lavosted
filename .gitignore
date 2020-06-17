@@ -1,4 +1,4 @@
 node_modules
-app.js
 plugin
-page
+/page/first.js
+/page/first.ts
