@@ -1,6 +1,15 @@
 const path = require('path');
 
 module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+        
+      },
+    ],
+  },
 	watch: true,
 	mode: 'development',
   	entry: './src/js/index.js',

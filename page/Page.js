@@ -21,12 +21,6 @@ export default{
 		dat(){
 			L.api('https://api.apis.guru/v2/metrics.json').get({
 				cache : true,
-				start: function(){
-					console.log('start');
-				},
-				progress: function(){
-					console.log('progress');
-				},
 				success: function(data){
 					console.log(data)
 				},
