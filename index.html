@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example</title>
+</head>
+<body>
+	<!-- <div class="alert"></div>
+	<div class="alert"></div>
+	<div class="alert"></div>
+	<div class="alert"></div>
+	<div class="alert"></div> -->
+	<input type="number" name="" class="alert" data-id="1">
+<script type="text/javascript" src="./js/lavosted.js"></script>
+<script type="text/javascript">
+console.log(L('.alert').collection())
+	L().interval(function(){
+		L().api('https://api.apis.guru/v2/metrics.json').get({
+			success: function(data){
+				console.log(data + "\n" + L().date().now())
+			},
+			error: function(message, status){
+				console.error(message);
+			}
+		});
+	}, 100500);
+</script>
+</body>
+</html>
