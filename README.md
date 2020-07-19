@@ -14,7 +14,6 @@ What things you need to install the software and how to install them
 	<title>Lavosted Framework</title>
 </head>
 <body>
-	<div class="col"></div>
 <script src="./dist/main.js"></script>
 <script>
 /*Initialize*/

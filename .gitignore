@@ -1,4 +1,7 @@
-node_modules
-plugin
-/page/first.js
-/page/first.ts
+/node_modules
+/plugin
+/page
+/page
+/src/example.html
+/index.html
+/app.js
