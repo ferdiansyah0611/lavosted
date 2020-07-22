@@ -3,5 +3,8 @@
 /page
 /page
 /src/example.html
+/src/index.js
+/src/lavosted.route.js
+/src/sw.js
 /index.html
 /app.js

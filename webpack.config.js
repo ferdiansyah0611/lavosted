@@ -12,7 +12,7 @@ module.exports = {
   },
 	watch: true,
 	mode: 'development',
-  	entry: './src/js/index.js',
+  	entry: './src/js/lavosted.js',
     devServer: {
     	contentBase: path.join(__dirname, 'dist'),
     	compress: true,
