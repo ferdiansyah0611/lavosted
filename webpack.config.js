@@ -11,7 +11,7 @@ module.exports = {
     ],
   },
 	watch: true,
-	mode: 'development',
+	mode: 'production',
   	entry: './src/js/lavosted.js',
     devServer: {
     	contentBase: path.join(__dirname, 'dist'),
