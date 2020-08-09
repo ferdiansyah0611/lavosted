@@ -5,7 +5,7 @@ Lavosted is a frontend framework js for websites. Lavosted is results compiler a
 ### Installing
 
 What things you need to install the software and how to install them
-## Check the latest version
+### Check the latest version
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
