@@ -1,6 +1,6 @@
 {
   "name": "lavosted",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Lavosted is a frontend framework for websites. Lavosted is simpler to use compared to other framewok because lavosted only defines what class is needed, the css file will be called automatically so that lavosted is lightweight to use and improves website performance",
   "main": "./dist/main.js",
   "scripts": {
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ferdiansyah0611/Lavosted-Frameworks.git"
+    "url": "https://github.com/ferdiansyah0611/lavosted"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ferdiansyah0611/Lavosted-Frameworks/issues"
+    "url": "https://github.com/ferdiansyah0611/lavosted/issues"
   },
-  "homepage": "https://github.com/ferdiansyah0611/Lavosted-Frameworks#readme",
+  "homepage": "https://github.com/ferdiansyah0611/lavosteds#readme",
   "devDependencies": {
     "html-webpack-plugin": "^4.3.0",
     "ts-loader": "^7.0.5",
