@@ -1,6 +1,6 @@
 {
   "name": "lavosted",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Lavosted is a frontend framework for websites. Lavosted is simpler to use compared to other framewok because lavosted only defines what class is needed, the css file will be called automatically so that lavosted is lightweight to use and improves website performance",
   "main": "./dist/main.js",
   "scripts": {
