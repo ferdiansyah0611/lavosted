@@ -1,9 +1,6 @@
 ## Lavosted [![npm version](https://img.shields.io/npm/v/lavosted.svg?style=flat)](https://www.npmjs.com/package/lavosted)
-Lavosted is a frontend framework js for websites. Lavosted is results compiler and simple to use compared to other framewok so that lavosted is lightweight to use and improves website performance.
- In the future, the addition of new features for more modern websites is to use a single page application and typescript.
-
+Lavosted is a javascript library to facilitate scripting from the client side. Its features are like jquery but it uses vanilla javascript and is lighter in size.
 ### Installing
-
 What things you need to install the software and how to install them.
 #### Install with node package manager
 ```cli
